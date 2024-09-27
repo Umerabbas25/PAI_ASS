@@ -30,6 +30,15 @@ class Product:
 
             total_price = self.get_price(quantity)
             self.amount -= quantity
+        # Create product object
+product = Product("Laptop", 150, 1000)
+
+# Test cases
+product.make_purchase(5)   # No discount
+product.make_purchase(50)  # 10% discount
+product.make_purchase(120) # 20% discount
+product.make_purchase(-5)  # Invalid quantity
+product.make_purchase(200) # Insufficient stock
             print(f"Purchased {quantity} items of {self.name} for ${total_price:.2f}.")
             print(f"Remaining stock: {self.amount}")
 
